@@ -1292,6 +1292,7 @@
 	#cs-footer-275 {
 		padding: var(--sectionPadding);
 		background-color: #1a1a1a;
+		padding-bottom: 1.5rem; /* Reduce this value until it looks right */
 
 		.cs-container {
 			width: 100%;
