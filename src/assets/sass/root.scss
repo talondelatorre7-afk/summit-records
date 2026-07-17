@@ -13,18 +13,18 @@
 @media only screen and (min-width: 0px) {
 	/* All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
     :root {
-        --primary: #007bff;            /* Electric Blue - For buttons & highlights */
-        --primaryLight: #00a8ff;       /* Lighter Blue */
-        --secondary: #003366;          /* Deep Navy */
-        --secondaryLight: #00509d;     /* Mid-tone Navy */
-        --headerColor: #0b132b;        /* Deepest Navy for Headlines */
-        --bodyTextColor: #3a506b;      /* Slate Gray for body text */
+        --primary: #42E9FF;            /* Electric Blue - For buttons & highlights */
+        --primaryLight: #42E9FF;       /* Lighter Blue */
+        --secondary: #000000;          /* Deep Navy */
+        --secondaryLight: #000000;     /* Mid-tone Navy */
+        --headerColor: #000000;        /* Deepest Navy for Headlines */
+        --bodyTextColor: #000307;      /* Slate Gray for body text */
         --bodyTextColorWhite: #f0f5f9; /* Clean Off-white */
 
         /* Dark Mode Styles - The "Abyss" Palette */
-        --dark: #0b132b;               /* Deep Abyss */
-        --medium: #1c2541;              /* Deep Sea Surface */
-        --accent: #3a506b;              /* Oceanic Accent */
+        --dark: #000000;               /* Deep Abyss */
+        --medium: #000000;              /* Deep Sea Surface */
+        --accent: #42E9FF;              /* Oceanic Accent */
 
         /* 13px - 16px */
         --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
@@ -1517,4 +1517,43 @@
 			width: auto;
 		}
 	}
+}
+/* ============================================ */
+/* Animated Logo Switching                      */
+/* ============================================ */
+
+/* 1. Turn the logo link into a grid to stack the images perfectly */
+.cs-logo {
+    display: grid !important;
+    align-items: center;
+}
+
+/* 2. Place both images in the exact same grid spot and set the animation speed */
+.cs-logo img {
+    grid-column: 1;
+    grid-row: 1;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* 3. Default State (Light Mode) */
+.cs-logo-dark {
+    opacity: 0;
+    transform: scale(0.8); /* Shrinks it slightly while hidden */
+    pointer-events: none; /* Prevents invisible logo from blocking clicks */
+}
+.cs-logo-light {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* 4. Active State (Dark Mode) */
+body.dark-mode .cs-logo-dark {
+    opacity: 1;
+    transform: scale(1); /* Pops back to full size */
+    pointer-events: auto;
+}
+body.dark-mode .cs-logo-light {
+    opacity: 0;
+    transform: scale(0.8); /* Shrinks away */
+    pointer-events: none;
 }

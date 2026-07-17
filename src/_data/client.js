@@ -1,11 +1,11 @@
 module.exports = {
-    name: "Deep Sea Digital",
-    email: "tddmedia1@gmail.com",
+    name: "Summit Records",
+    email: "talondelatorre7@gmail.com",
     phoneForTel: "909-919-0912",
     phoneFormatted: "(909) 919-0912",
     socials: {
         facebook: "https://www.facebook.com/log00001",
-        instagram: "https://www.instagram.com/deepseawebdesign",
+        instagram: "https://www.instagram.com/thesummitrecords",
     },
     //! Make sure you include the file protocol (e.g. https://) and that NO TRAILING SLASH is included
     domain: "https://www.example.com",
